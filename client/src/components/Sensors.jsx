@@ -5,7 +5,7 @@ import Sensor from './Sensor'
 
 const Sensors = () => (
   <div>
-    <h3>Sensor List</h3>
+    <h3>Sensor Information</h3>
     <Switch>
       <Route exact path='/sensors' component={SensorList}/>
       <Route path='/sensors/:id' component={Sensor}/>
