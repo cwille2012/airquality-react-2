@@ -108,7 +108,39 @@ const SensorFunctions = {
     document.getElementById('saveButton').style.display ='none';
     document.getElementById('cancelButton').style.display ='none';
 
-    console.log(sensor);
+    var postData = JSON.stringify(sensor);
+    var validJSON = true;
+    try {
+      JSON.parse(postData);
+    } catch (e) {
+      validJSON = false;
+      return('JSON error: ' + e)
+    }
+    if (validJSON) {
+      var url = String(window.location.href);
+      url = url.replace(sensor.id, '');
+      url = url.replace(/sensors/g, 'api/sensors');
+      url = url.replace(/3000/g, '5000');
+      console.log(url);
+
+      var method = "POST";
+      var shouldBeAsync = true;
+      var request = new XMLHttpRequest();
+
+      request.onload = function() {
+          var status = request.status;
+          var data = request.responseText;
+          if (status === 200) {
+              console.log('success: ' + data);
+          } else {
+              console.log('error: ' + data);
+          }
+      }
+      request.open(method, url, shouldBeAsync);
+      request.setRequestHeader("Content-Type", "application/json");
+      request.send(postData);
+    }
+
     return ('saved ' + sensor.id)
   },
   //ADD

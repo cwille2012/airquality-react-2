@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 //add ability to sort/display sensors by different parameters
 
 const SensorList = () => (
-  <div>
+  <div className='main'>
     <ul>
       {
         SensorAPI.all().map(s => (

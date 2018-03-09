@@ -12,7 +12,7 @@ const Sensor = (props) => {
     return <div>Sorry, but the sensor was not found</div>
   } else if (props.match.params.id === 'new') {
     return (
-      <div>
+      <div className='main'>
         <h4>New sensor</h4>
         <select>
           <option style={{display: 'none'}}>Sensor Type</option>
@@ -27,7 +27,7 @@ const Sensor = (props) => {
   } else {
       if (sensor.type === 'Air Quality') {
       return (
-        <div>
+        <div className='main'>
           <h1>{sensor.id}</h1>
           <h4 id='type'>Sensor Type: {sensor.type}</h4>
           <h4 id='name'>Sensor Name: {sensor.name}</h4>
@@ -75,21 +75,21 @@ const Sensor = (props) => {
       )
     } else if (sensor.type === 'Smoke Detector') {
       return (
-        <div>
+        <div className='main'>
           This dashboard is not configured for smoke detectors yet.
           <Link to='/sensors'>Back</Link>
         </div>
       )
     } else if (sensor.type === 'X-Ray') {
       return (
-        <div>
+        <div className='main'>
           This dashboard is not configured for X-Ray sensors yet.
           <Link to='/sensors'>Back</Link>  
         </div>
       )
     } else {
       return (
-      <div>
+      <div className='main'>
         Sorry, but this sensor type was not found. {sensor.type}
         <Link to='/sensors'>Back</Link>
       </div>)

@@ -1,15 +1,18 @@
 {
-    "name": "react-web-server",
-    "version": "1.0.0",
-    "scripts": {
-        "client": "cd client && react-scripts start",
-        "server": "nodemon server.js",
-        "start": "concurrently --kill-others-on-fail \"yarn server\" \"cd client && npm start\""
-    },
-    "dependencies": {
-        "express": "^4.16.2"
-    },
-    "devDependencies": {
-        "concurrently": "^3.5.1"
-    }
+  "name": "react-web-server",
+  "version": "1.0.0",
+  "scripts": {
+    "client": "cd client && react-scripts start",
+    "server": "nodemon server.js",
+    "start": "concurrently --kill-others-on-fail \"yarn server\" \"cd client && npm start\""
+  },
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
+    "express": "^4.16.2",
+    "mongodb": "^3.0.4"
+  },
+  "devDependencies": {
+    "concurrently": "^3.5.1"
+  }
 }

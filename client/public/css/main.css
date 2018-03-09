@@ -9,6 +9,10 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+.main {
+    margin-left: 10px;
+}
+
 .header {
     opacity: .8;
     position: fixed;
@@ -26,7 +30,12 @@ body {
 .header-link {
     color: white;
     text-decoration: none;
-    margin: 10px;
+    padding: 10px;
+}
+
+.header-link:hover {
+    color: rgb(200, 200, 200);
+    background: #660000;
 }
 
 .footer {
