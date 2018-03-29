@@ -10,6 +10,24 @@ const Development = () => (
     <button id='testPostButton' onClick={() => {console.log(DevFunctions.postTest())}}>Test Post</button>
     <br/>
     <br/>
+    Name: <input id='nameInput' type='text'></input><br/><br/>
+    Email: <input id='emailInput' type='email'></input><br/><br/>
+    Username: <input id='userInput' type='text'></input><br/><br/>
+    Password: <input id='passInput' type='password'></input><br/><br/>
+    Country: <input id='countryInput' type='text'></input><br/><br/>
+    <button id='postNewUser' onClick={() => {console.log(DevFunctions.postNewUser())}}>Add User</button>
+    <br/>
+    <br/>
+    Email: <input id='emailWhitelistInput' type='email'></input><br/><br/>
+    <select id='accessSelect'>
+      <option style={{display: 'none'}}>Access</option>
+      <option value="admin">Admin</option>
+      <option value="manager">Manager</option>
+      <option value="user">User</option>
+    </select>
+    <button id='postWhitelist' onClick={() => {console.log(DevFunctions.postWhitelist())}}>Add to Whitelist</button>
+    <br/>
+    <br/>
     <textarea id='postTextArea' rows="4" cols="50"></textarea>
     <br/>
     <select id='destinationSelect'>
@@ -23,6 +41,8 @@ const Development = () => (
     <br/>
     <br/>
     <button id='getSensorsButton' onClick={() => {console.log(DevFunctions.getSensors())}}>Get Sensors</button>
+    <button id='getUsersButton' onClick={() => {console.log(DevFunctions.getUsers())}}>Get Users</button>
+    <button id='getWhitelistButton' onClick={() => {console.log(DevFunctions.getWhitelist())}}>Get Whitelist</button>
     <div id='sensorResultDiv' style={{maxWidth: '400px', fontSize: '12px'}}></div>
   </div>
 )
